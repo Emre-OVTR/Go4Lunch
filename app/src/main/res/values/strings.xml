@@ -57,5 +57,6 @@
     <string name="no_restaurant_booked">No lunch today ?</string>
 
     <string name="floating_button" translatable="false">floating button</string>
+    <string name="hasnt_decided">%1$s hasn\'t decided yet</string>
 
 </resources>

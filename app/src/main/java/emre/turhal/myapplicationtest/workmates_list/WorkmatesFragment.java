@@ -2,7 +2,11 @@ package emre.turhal.myapplicationtest.workmates_list;
 
 import static com.firebase.ui.auth.ui.email.EmailLinkFragment.TAG;
 
+import static emre.turhal.myapplicationtest.utils.GetTodayDate.getTodayDate;
+import static emre.turhal.myapplicationtest.utils.ShowToastSnack.showToast;
+
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -23,11 +28,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 import emre.turhal.myapplicationtest.BaseFragment;
 import emre.turhal.myapplicationtest.R;
+import emre.turhal.myapplicationtest.manager.BookingManager;
 import emre.turhal.myapplicationtest.manager.UserManager;
 import emre.turhal.myapplicationtest.models.Workmate;
+import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultDetails;
+import emre.turhal.myapplicationtest.restaurant_details.DetailsActivity;
+import emre.turhal.myapplicationtest.utils.ItemClickSupport;
 
 
 public class WorkmatesFragment extends BaseFragment {
@@ -35,6 +45,7 @@ public class WorkmatesFragment extends BaseFragment {
     private RecyclerView mRecyclerView;
     private List<Workmate> mWorkmateList = new ArrayList<>();
     private WorkmatesAdapter mWorkmatesAdapter;
+    private BookingManager mBookingManager = BookingManager.getInstance();
 
 
 
@@ -67,6 +78,7 @@ public class WorkmatesFragment extends BaseFragment {
         this.mWorkmatesAdapter = new WorkmatesAdapter(this.mWorkmateList);
         this.mRecyclerView.setAdapter(this.mWorkmatesAdapter);
         requireActivity().setTitle(getString(R.string.Titre_Toolbar_workmates));
+        configureOnClickRecyclerView();
         return view;
     }
 
@@ -97,4 +109,34 @@ public class WorkmatesFragment extends BaseFragment {
         super.onResume();
         initList();
     }
+
+    private void configureOnClickRecyclerView() {
+        ItemClickSupport.addTo(mRecyclerView, R.layout.fragment_workmates_item)
+                .setOnItemClickListener((recyclerView, position, v) -> {
+                    Workmate result = mWorkmatesAdapter.getWorkmates(position);
+                    checkBooking(result);
+                });
+    }
+
+    private void startRestaurantDetails(String placeId) {
+        Intent intent = new Intent(getActivity(), DetailsActivity.class);
+        intent.putExtra("PlaceDetailResult", placeId);
+        startActivity(intent);
+    }
+
+    private void checkBooking(Workmate workmate){
+        mBookingManager.getBooking(workmate.getUid(), getTodayDate()).addOnCompleteListener(bookingTask -> {
+            if (bookingTask.isSuccessful()){
+                if (!(Objects.requireNonNull(bookingTask.getResult().isEmpty()))) {
+                    for (QueryDocumentSnapshot booking : bookingTask.getResult()) {
+                        startRestaurantDetails(Objects.requireNonNull(booking.getData().get("restaurantId")).toString());
+                    }
+                } else {
+                    showToast(getContext(), getResources().getString(R.string.hasnt_decided, workmate.getName()), Toast.LENGTH_SHORT);
+                }
+            }
+        });
+    }
+
+
 }

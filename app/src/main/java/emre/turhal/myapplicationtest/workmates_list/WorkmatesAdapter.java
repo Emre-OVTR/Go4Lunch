@@ -10,6 +10,7 @@ import java.util.List;
 
 import emre.turhal.myapplicationtest.databinding.FragmentWorkmatesItemBinding;
 import emre.turhal.myapplicationtest.models.Workmate;
+import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultDetails;
 
 public class WorkmatesAdapter extends RecyclerView.Adapter<WorkmatesViewHolder> {
 
@@ -41,4 +42,10 @@ public class WorkmatesAdapter extends RecyclerView.Adapter<WorkmatesViewHolder> 
         int itemCount = mWorkmatesList.size();
         return itemCount;
     }
+
+    public Workmate getWorkmates(int position) {
+        return this.mWorkmatesList.get(position);
+    }
+
+
 }
