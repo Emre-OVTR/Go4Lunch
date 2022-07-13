@@ -78,6 +78,12 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
         View view = mBinding.getRoot();
         mMainActivity.mLiveData.observe(getViewLifecycleOwner(), resultDetails -> getDeviceLocation());
 
+        mBinding.fragmentMapFloatingActionBtn.setOnClickListener(v -> {
+            getLocationPermission();
+            getDeviceLocation();
+        });
+
+
         return view;
 
 
@@ -109,11 +115,7 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
     }
 
     private void getLocationPermission() {
-        /*
-         * Request location permission, so that we can get the location of the
-         * device. The result of the permission request is handled by a callback,
-         * onRequestPermissionsResult.
-         */
+
         if (ContextCompat.checkSelfPermission(requireActivity(),
                 android.Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -154,7 +156,7 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
 
                         if (lastKnownLocation != null) {
 
-                            // Set the map's camera position to the current location of the device.
+
                             lastKnownLocation = task.getResult();
 
                             mLocation = lastKnownLocation.getLatitude() + "," + lastKnownLocation.getLongitude();
@@ -171,7 +173,7 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
                                     .newLatLngZoom(defaultLocation, 15));
                             googleMap.getUiSettings().setMyLocationButtonEnabled(false);
 
-                            // UPDATE MARKERS
+
                             updateMarkers(googleMap, mMainActivity);
                         }
                     } else {

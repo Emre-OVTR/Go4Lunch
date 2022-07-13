@@ -56,4 +56,6 @@
     <string name="eating_at">%1$s is eating at %2$s</string>
     <string name="no_restaurant_booked">No lunch today ?</string>
 
+    <string name="floating_button" translatable="false">floating button</string>
+
 </resources>
