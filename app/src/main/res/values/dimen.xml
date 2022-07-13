@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_large_margin">20dip</dimen>
+    <dimen name="elevation_size">20dp</dimen>
+    <dimen name="padding_App_bar_height">60dp</dimen>
+    <dimen name="drawer_nav_header_height">160dp</dimen>
+    <dimen name="nav_header_vertical_space">8dp</dimen>
+    <dimen name="padding">20dp</dimen>
+    <dimen name="margin_to_parent">8dp</dimen>
+    <dimen name="padding_to_parent">8dp</dimen>
+    <dimen name="picture_size">80dp</dimen>
+    <dimen name="workmate_picture_size">20dp</dimen>
+    <dimen name="spacing_words">4dp</dimen>
+    <dimen name="text_size_email_not_found">12sp</dimen>
+    <dimen name="picture_size_min">60dp</dimen>
+    <dimen name="mates_picture_size">20dp</dimen>
+    <dimen name="space_between_word">4dp</dimen>
+</resources>

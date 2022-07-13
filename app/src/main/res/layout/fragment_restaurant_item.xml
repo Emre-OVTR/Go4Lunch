@@ -1,0 +1,106 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="@dimen/margin_to_parent">
+
+    <!-- FIRST LINE -->
+
+    <TextView
+        android:id="@+id/name_restaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_to_parent"
+        android:layout_marginTop="@dimen/margin_to_parent"
+        android:ellipsize="end"
+        android:maxWidth="200dp"
+        android:text="@string/name_restaurant"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/distance_restaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_to_parent"
+        android:layout_marginEnd="@dimen/margin_to_parent"
+        android:text="@string/distance"
+        android:textColor="@color/browser_actions_title_color"
+        app:layout_constraintEnd_toStartOf="@id/item_avatar_restaurant"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- SECOND LINE -->
+
+    <ImageView
+        android:id="@+id/item_avatar_restaurant"
+        android:layout_width="@dimen/picture_size"
+        android:layout_height="@dimen/picture_size"
+        android:layout_marginTop="@dimen/margin_to_parent"
+        android:layout_marginEnd="@dimen/margin_to_parent"
+        android:contentDescription="@string/photo_restaurant_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/adress_restaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_to_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:ellipsize="end"
+        android:maxWidth="200dp"
+        android:text="@string/address"
+        app:layout_constraintBottom_toTopOf="@+id/Open_hour"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_restaurant" />
+
+    <ImageView
+        android:id="@+id/workmate_on_restaurant_image"
+        android:layout_width="@dimen/mates_picture_size"
+        android:layout_height="@dimen/mates_picture_size"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/item_avatar_restaurant"
+        app:layout_constraintEnd_toStartOf="@id/workmate_on_restaurant"
+        app:layout_constraintTop_toTopOf="@id/item_avatar_restaurant"
+        app:srcCompat="@drawable/ic_perm_identity_black_24dp" />
+
+    <TextView
+        android:id="@+id/workmate_on_restaurant"
+        android:layout_width="@dimen/mates_picture_size"
+        android:layout_height="@dimen/mates_picture_size"
+        android:layout_marginEnd="@dimen/margin_to_parent"
+        app:layout_constraintBottom_toBottomOf="@id/item_avatar_restaurant"
+        app:layout_constraintEnd_toStartOf="@id/item_avatar_restaurant"
+        app:layout_constraintTop_toTopOf="@id/item_avatar_restaurant" />
+
+
+    <!-- THIRD LINE -->
+
+    <TextView
+        android:id="@+id/Open_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_to_parent"
+        android:text="@string/opening_time"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@id/item_avatar_restaurant"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RatingBar
+        android:id="@+id/star_restaurant"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_to_parent"
+        android:numStars="3"
+        android:theme="@style/RatingBar"
+        app:layout_constraintBottom_toBottomOf="@id/Open_hour"
+        app:layout_constraintEnd_toStartOf="@id/item_avatar_restaurant"
+        app:layout_constraintTop_toTopOf="@id/Open_hour" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

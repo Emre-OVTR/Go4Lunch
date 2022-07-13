@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="facebook_application_id">483008259977080</string>
+    <string name="fb_login_protocol_scheme">fb483008259977080</string>
+    <string name="API_KEY">AIzaSyCVhZiXlooLrQpsEFlJ62T088ClLBUFRIQ </string>
+
+
+    <string name="logo" translatable="false">logo</string>
+    <string name="activity_main_menu_search">Search</string>
+    <string name="menu_lunch">YOUR LUNCH</string>
+    <string name="menu_settings">SETTINGS</string>
+    <string name="menu_logout">LOGOUT</string>
+
+    <string name="call">CALL</string>
+    <string name="like" translatable="false">LIKE</string>
+    <string name="website">WEBSITE</string>
+
+    <string name="title_map">Map View</string>
+    <string name="title_list">List View</string>
+    <string name="title_workmate">Workmates</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="simple_app_name">Go4Lunch</string>
+    <string name="Avatar">avatar</string>
+    <string name="searching">searching</string>
+    <string name="Titre_Toolbar_workmates">workmates</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="name_restaurant">name_restaurant</string>
+    <string name="distance">distance</string>
+    <string name="photo_restaurant_item">photo_restaurant_item</string>
+    <string name="address">restaurant_adress</string>
+    <string name="opening_time">restaurant_opening</string>
+    <string name="unit_distance" translatable="false">%1$sm</string>
+
+    <string name="restaurant_closed">Closed</string>
+    <string name="restaurant_opening_not_know">Opening hours are not known</string>
+    <string name="closing_soon">Closing soon (%1$s)</string>
+    <string name="open_until">Open until %1$s</string>
+
+    <string name="todo" translatable="false">TODO</string>
+    <string name="Image_restaurant">Image of restaurant selected</string>
+
+    <string name="error_unknown_error">An unknown error has occurred</string>
+
+    <string name="cancel_booking">You cancelled the booking for this place</string>
+    <string name="modify_booking">You have chosen a new place for lunch</string>
+    <string name="new_booking">You have chosen this place for lunch</string>
+    <string name="restaurant_error">Unable to retrieve information</string>
+
+    <string name="logo_user">logo of user</string>
+    <string name="restaurant_recyclerview">%1$s is joining !</string>
+
+    <string name="eating_at">%1$s is eating at %2$s</string>
+    <string name="no_restaurant_booked">No lunch today ?</string>
+
+</resources>

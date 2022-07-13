@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/mapFragment">
+
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="emre.turhal.myapplicationtest.map.MapFragment"
+        android:label="@string/title_map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/restaurantFragment"
+        android:name="emre.turhal.myapplicationtest.restaurants_list.RestaurantFragment"
+        android:label="@string/title_list"
+        tools:layout="@layout/fragment_restaurant" />
+
+    <fragment
+        android:id="@+id/workmatesFragment"
+        android:name="emre.turhal.myapplicationtest.workmates_list.WorkmatesFragment"
+        android:label="@string/title_workmate"
+        tools:layout="@layout/fragment_workmates" />
+
+</navigation>

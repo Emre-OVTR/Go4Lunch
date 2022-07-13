@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "112782275328",
+    "project_id": "go4lunchtest-fe0de",
+    "storage_bucket": "go4lunchtest-fe0de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112782275328:android:fde90f5f11f74d6089f9e5",
+        "android_client_info": {
+          "package_name": "emre.turhal.myapplicationtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112782275328-7k1vjkl9jtvm9ajcq30pq8tidojfqvto.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdYA9RuuAQeEYiitdvxNM8RI-6m6fh6EA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112782275328-7k1vjkl9jtvm9ajcq30pq8tidojfqvto.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
