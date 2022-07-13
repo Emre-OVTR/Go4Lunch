@@ -81,7 +81,7 @@ public class DetailsActivity extends AppCompatActivity implements GooglePlaceDet
                                 String name = Objects.requireNonNull(workmateTask.getResult().getData()).get("name").toString();
                                 String uid = Objects.requireNonNull(workmateTask.getResult().getData().get("uid")).toString();
                                 String urlPicture = Objects.requireNonNull(workmateTask.getResult().getData().get("urlPicture")).toString();
-                                Workmate workmateToAdd = new Workmate(urlPicture,name, uid );
+                                Workmate workmateToAdd = new Workmate(urlPicture, name, uid);
                                 mWorkmates.add(workmateToAdd);
                             }
                             mAdapter.notifyDataSetChanged();
