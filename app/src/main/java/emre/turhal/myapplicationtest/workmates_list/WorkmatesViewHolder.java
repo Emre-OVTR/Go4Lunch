@@ -15,6 +15,7 @@ import emre.turhal.myapplicationtest.R;
 import emre.turhal.myapplicationtest.databinding.FragmentWorkmatesItemBinding;
 import emre.turhal.myapplicationtest.manager.BookingManager;
 import emre.turhal.myapplicationtest.models.Workmate;
+import emre.turhal.myapplicationtest.utils.ChangeColorWorkmate;
 
 public class WorkmatesViewHolder extends RecyclerView.ViewHolder {
 
@@ -39,6 +40,10 @@ public class WorkmatesViewHolder extends RecyclerView.ViewHolder {
                         mBinding.itemListName.setTypeface(mBinding.itemListName.getTypeface(), Typeface.BOLD);
                     }
 
+                } else {
+                    mBinding.itemListName.setText(itemView.getResources().getString(R.string.hasnt_decided, workmate.getName()));
+                    ChangeColorWorkmate.changeTextColor(R.color.colorGrey1, mBinding.itemListName);
+                    mBinding.itemListName.setTypeface(mBinding.itemListName.getTypeface(), Typeface.ITALIC);
                 }
             }
         });

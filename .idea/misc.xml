@@ -6,6 +6,7 @@
         <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/drawable-v24/ic_check_circle_black_24dp.xml" value="0.1215" />
         <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/drawable-v24/ic_clear_black_24dp.xml" value="0.1215" />
         <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/drawable-v24/ic_search_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/drawable/bowl.xml" value="0.1215" />
         <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/drawable/ic_anon_user_48dp.xml" value="0.1215" />
         <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/drawable/ic_call_24dp.xml" value="0.1" />
         <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14814814814814814" />
@@ -22,6 +23,7 @@
         <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/layout/activity_restaurant_details_item.xml" value="0.2105978260869565" />
+        <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/layout/activity_settings.xml" value="0.2105978260869565" />
         <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/layout/activity_workmates_fragment.xml" value="0.25" />
         <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/layout/drawer_nav_header.xml" value="0.1" />
         <entry key="..\:/Users/emret/Desktop/MyApplication2/app/src/main/res/layout/fragment_map.xml" value="0.25" />

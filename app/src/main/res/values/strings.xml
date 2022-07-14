@@ -62,4 +62,11 @@
     <string name="search_hint">Search</string>
     <string name="search_too_short">3 characters minimum</string>
 
+    <string name="notification" translatable="false">Go4Lunch</string>
+    <string name="notif1">Your lunch today :</string>
+    <string name="notif2">Workmates participating :</string>
+    <string name="notification_no_workmates">None.</string>
+
+    <string name="settings_notification">Notifications</string>
+
 </resources>
