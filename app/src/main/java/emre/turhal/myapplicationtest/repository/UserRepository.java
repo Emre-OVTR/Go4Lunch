@@ -74,6 +74,10 @@ public final class UserRepository {
 
     }
 
+    public static void updateUserSettings(String userId, boolean notification) {
+        UserRepository.getWorkmateCollection().document(userId).update("notification", notification);
+    }
+
 
 
 }

@@ -49,12 +49,12 @@ public class UserManager {
 
     }
 
-    public Task<DocumentSnapshot> getUserData(){
-        return userRepository.getUserData();
-    }
-
     public static CollectionReference getWorkmateCollection(){
         return userRepository.getWorkmateCollection();
+    }
+
+    public static void updateUserSettings(String userId, boolean notification) {
+        userRepository.updateUserSettings(userId, notification);
     }
 
 

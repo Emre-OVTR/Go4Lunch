@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rest_list"
     tools:listitem="@layout/fragment_restaurant_item"
     android:paddingTop="@dimen/padding_App_bar_height"
     android:paddingBottom="@dimen/padding_App_bar_height"

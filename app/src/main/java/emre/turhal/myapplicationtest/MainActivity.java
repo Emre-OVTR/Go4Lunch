@@ -169,13 +169,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         Intent intent = new Intent(this, LoginActivity.class);
                         startActivity(intent);
                     });
-        if (id == R.id.nav_lunch)
 
+        if (id == R.id.nav_lunch)
             mBookingManager.getBooking(Objects.requireNonNull(mUserManager.getCurrentUser()).getUid(), getTodayDate()).addOnCompleteListener(this::onComplete);
 
-
+        else if (id == R.id.nav_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+        }
         return true;
-
     }
 
     private void updateUI() {

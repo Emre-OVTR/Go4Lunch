@@ -29,4 +29,10 @@ public class NotificationManager {
 
         mAlarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 1000 * 2, AlarmManager.INTERVAL_FIFTEEN_MINUTES, mPendingIntent);
     }
+
+    public void cancelAlarm() {
+        if (mAlarmManager != null) {
+            mAlarmManager.cancel(mPendingIntent);
+        }
+    }
 }

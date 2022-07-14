@@ -59,7 +59,7 @@ public class AlarmReceiver extends BroadcastReceiver implements GooglePlaceDetai
                                  for (QueryDocumentSnapshot booking : bookingTask.getResult()) {
                                      mUserManager.getWorkmate(Objects.requireNonNull(booking.getData().get("workmateUid")).toString()).addOnCompleteListener(userTask -> {
                                          if (userTask.isSuccessful()){
-                                             if (!(Objects.requireNonNull(userTask.getResult().getData().get("workmateUid").toString()).equals(mUserManager.getCurrentUser().getUid()))){
+                                             if (!(Objects.requireNonNull(userTask.getResult().getData().get("uid").toString()).equals(mUserManager.getCurrentUser().getUid()))){
                                                  String username = Objects.requireNonNull(userTask.getResult().getData().get("name").toString());
                                                  mWorkmatesList.add(username);
                                              }
