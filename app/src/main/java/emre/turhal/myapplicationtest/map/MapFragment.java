@@ -2,16 +2,23 @@ package emre.turhal.myapplicationtest.map;
 
 import static android.content.ContentValues.TAG;
 
+import static emre.turhal.myapplicationtest.utils.ShowToastSnack.showToast;
 import static emre.turhal.myapplicationtest.utils.UpdateMarkers.updateMarkers;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,6 +34,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.tasks.Task;
+
+import java.util.Objects;
 
 import emre.turhal.myapplicationtest.BaseFragment;
 import emre.turhal.myapplicationtest.restaurant_details.DetailsActivity;
@@ -63,7 +72,7 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
 
         mBinding = FragmentMapBinding.inflate(getLayoutInflater());
-        mMainActivity= (MainActivity) requireActivity();
+        mMainActivity = (MainActivity) requireActivity();
 
 
 
@@ -83,7 +92,7 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
             getDeviceLocation();
         });
 
-
+        setHasOptionsMenu(true);
         return view;
 
 
@@ -211,6 +220,44 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
     @Override
     public void onResume() {
         super.onResume();
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
+        inflater.inflate(R.menu.activity_main_appbar, menu);
+        SearchView mSearchView = new SearchView(Objects.requireNonNull(((MainActivity) requireContext()).getSupportActionBar()).getThemedContext());
+        MenuItem item = menu.findItem(R.id.menu_activity_main_search);
+        item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW | MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        item.setActionView(mSearchView);
+        mSearchView.setQueryHint(getResources().getString(R.string.search_hint));
+        SearchManager mSearchManager = (SearchManager) requireContext().getSystemService(Context.SEARCH_SERVICE);
+        mSearchView.setSearchableInfo(mSearchManager.getSearchableInfo(((MainActivity) requireContext()).getComponentName()));
+        mSearchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                if (query.length() > 2) {
+                    mMainActivity.googleAutoCompleteSearch(query);
+                    mSearchView.clearFocus();
+                } else {
+                    showToast(getContext(), getResources().getString(R.string.search_too_short), 1);
+                }
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                if (query.length() > 2) {
+                    mMainActivity.googleAutoCompleteSearch(query);
+                } else if (query.length() == 0) {
+                    mMainActivity.searchByCurrentPosition();
+                }
+                return false;
+            }
+        });
     }
 
 

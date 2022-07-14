@@ -59,4 +59,7 @@
     <string name="floating_button" translatable="false">floating button</string>
     <string name="hasnt_decided">%1$s hasn\'t decided yet</string>
 
+    <string name="search_hint">Search</string>
+    <string name="search_too_short">3 characters minimum</string>
+
 </resources>

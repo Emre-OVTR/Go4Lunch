@@ -44,14 +44,16 @@ import java.util.Objects;
 
 import emre.turhal.myapplicationtest.manager.BookingManager;
 import emre.turhal.myapplicationtest.manager.UserManager;
+import emre.turhal.myapplicationtest.models.autocomplete_gson.AutocompleteResult;
 import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultDetails;
 import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultSearch;
 import emre.turhal.myapplicationtest.restaurant_details.DetailsActivity;
 import emre.turhal.myapplicationtest.retrofit.GooglePlaceDetailsCalls;
 import emre.turhal.myapplicationtest.retrofit.GooglePlacesCalls;
+import emre.turhal.myapplicationtest.retrofit.google_autocomplete.GoogleAutocompleteCalls;
 import emre.turhal.myapplicationtest.utils.DistanceTo;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GooglePlacesCalls.Callbacks, GooglePlaceDetailsCalls.Callbacks {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleAutocompleteCalls.Callbacks, GooglePlacesCalls.Callbacks, GooglePlaceDetailsCalls.Callbacks {
 
 
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
@@ -221,6 +223,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (mResultDetailsList.size() == resultSize) {
             mLiveData.setValue(mResultDetailsList);
         }
+    }
+
+    @Override
+    public void onResponse(@Nullable AutocompleteResult autoCompleteResult) {
+        assert autoCompleteResult != null;
+        resultSize = autoCompleteResult.getPredictions().size();
+        AutoCompleteToDetails(autoCompleteResult);
+
+    }
+
+    private void AutoCompleteToDetails(AutocompleteResult autoCompleteResult) {
+        mResultDetailsList.clear();
+        for (int i = 0; i < autoCompleteResult.getPredictions().size(); i++) {
+            GooglePlaceDetailsCalls.fetchPlaceDetails(this, autoCompleteResult.getPredictions().get(i).getPlaceId());
+        }
+    }
+
+    public void googleAutoCompleteSearch(String query) {
+        GoogleAutocompleteCalls.fetchAutoCompleteResult(this, query, mShareViewModel.getCurrentUserPositionFormatted());
     }
 
     @Override

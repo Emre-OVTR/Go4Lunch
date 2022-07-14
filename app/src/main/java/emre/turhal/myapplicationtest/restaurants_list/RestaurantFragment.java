@@ -1,5 +1,6 @@
 package emre.turhal.myapplicationtest.restaurants_list;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,11 +10,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
+import android.widget.Toast;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 import emre.turhal.myapplicationtest.BaseFragment;
 import emre.turhal.myapplicationtest.databinding.FragmentRestaurantBinding;
@@ -95,6 +104,47 @@ public class RestaurantFragment extends BaseFragment {
         configureRecyclerView();
     }
 
+
+    @Override
+    public void onCreateOptionsMenu(@NotNull Menu menu, @NotNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
+        inflater.inflate(R.menu.activity_main_appbar, menu);
+
+        SearchManager searchManager = (SearchManager) requireContext().getSystemService(Context.SEARCH_SERVICE);
+        MenuItem item = menu.findItem(R.id.menu_activity_main_search);
+        SearchView mSearchView = new SearchView(Objects.requireNonNull(((MainActivity) requireContext()).getSupportActionBar()).getThemedContext());
+        item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW | MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        item.setActionView(mSearchView);
+        mSearchView.setQueryHint(getResources().getString(R.string.search_hint));
+        mSearchView.setSearchableInfo(searchManager.getSearchableInfo(((MainActivity) requireContext()).getComponentName()));
+        mSearchView.setIconifiedByDefault(false);// Do not iconify the widget; expand it by default
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                if (query.length() > 2) {
+                    mMainActivity.googleAutoCompleteSearch(query);
+                    mRecyclerViewAdapter.notifyDataSetChanged();
+                    mSearchView.clearFocus();
+                } else {
+                    Toast.makeText(getContext(), getResources().getString(R.string.search_too_short), Toast.LENGTH_LONG).show();
+                }
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                if (query.length() > 2) {
+                    mMainActivity.googleAutoCompleteSearch(query);
+                    mRecyclerViewAdapter.notifyDataSetChanged();
+                } else if (query.length() == 0) {
+                    mMainActivity.searchByCurrentPosition();
+                    mRecyclerViewAdapter.notifyDataSetChanged();
+                }
+                return false;
+            }
+        });
+    }
 
 
 
