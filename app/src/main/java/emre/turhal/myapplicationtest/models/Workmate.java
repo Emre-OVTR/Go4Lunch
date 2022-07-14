@@ -7,6 +7,7 @@ public class Workmate {
     private String name;
     private String urlPicture;
     private String uid;
+    private boolean notification;
 
     public Workmate(){
     }
@@ -15,6 +16,7 @@ public class Workmate {
         this.name = name;
         this.urlPicture = urlPicture;
         this.uid = uid;
+        this.notification = false;
     }
 
     public String getName() {
@@ -40,6 +42,14 @@ public class Workmate {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public boolean isNotification() {
+        return notification;
+    }
+
+    public void setNotification(boolean notification) {
+        this.notification = notification;
     }
 }
 
