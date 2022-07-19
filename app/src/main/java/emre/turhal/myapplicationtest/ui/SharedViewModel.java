@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest;
+package emre.turhal.myapplicationtest.ui;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

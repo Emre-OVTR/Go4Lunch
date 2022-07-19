@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.restaurants_list;
+package emre.turhal.myapplicationtest.ui.restaurants_list;
 
 import android.app.SearchManager;
 import android.content.Context;
@@ -25,10 +25,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-import emre.turhal.myapplicationtest.BaseFragment;
+import emre.turhal.myapplicationtest.ui.BaseFragment;
 import emre.turhal.myapplicationtest.databinding.FragmentRestaurantBinding;
-import emre.turhal.myapplicationtest.restaurant_details.DetailsActivity;
-import emre.turhal.myapplicationtest.MainActivity;
+import emre.turhal.myapplicationtest.ui.restaurant_details.DetailsActivity;
+import emre.turhal.myapplicationtest.ui.MainActivity;
 import emre.turhal.myapplicationtest.R;
 import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultDetails;
 import emre.turhal.myapplicationtest.utils.ItemClickSupport;

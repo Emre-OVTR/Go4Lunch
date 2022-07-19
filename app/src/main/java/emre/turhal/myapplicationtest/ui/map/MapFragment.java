@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.map;
+package emre.turhal.myapplicationtest.ui.map;
 
 import static android.content.ContentValues.TAG;
 
@@ -38,9 +38,9 @@ import com.google.android.gms.tasks.Task;
 
 import java.util.Objects;
 
-import emre.turhal.myapplicationtest.BaseFragment;
-import emre.turhal.myapplicationtest.restaurant_details.DetailsActivity;
-import emre.turhal.myapplicationtest.MainActivity;
+import emre.turhal.myapplicationtest.ui.BaseFragment;
+import emre.turhal.myapplicationtest.ui.restaurant_details.DetailsActivity;
+import emre.turhal.myapplicationtest.ui.MainActivity;
 import emre.turhal.myapplicationtest.R;
 import emre.turhal.myapplicationtest.databinding.FragmentMapBinding;
 
@@ -61,7 +61,6 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
     public MapFragment() {
 
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -245,5 +244,4 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
             }
         });
     }
-
 }

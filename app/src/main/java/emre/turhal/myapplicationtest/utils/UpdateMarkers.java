@@ -11,9 +11,9 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.Objects;
 
-import emre.turhal.myapplicationtest.MainActivity;
+import emre.turhal.myapplicationtest.ui.MainActivity;
 import emre.turhal.myapplicationtest.R;
-import emre.turhal.myapplicationtest.manager.BookingManager;
+import emre.turhal.myapplicationtest.firebase.manager.BookingManager;
 
 
 public class UpdateMarkers {

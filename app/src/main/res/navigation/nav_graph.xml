@@ -8,19 +8,19 @@
 
     <fragment
         android:id="@+id/mapFragment"
-        android:name="emre.turhal.myapplicationtest.map.MapFragment"
+        android:name="emre.turhal.myapplicationtest.ui.map.MapFragment"
         android:label="@string/title_map"
         tools:layout="@layout/fragment_map" />
 
     <fragment
         android:id="@+id/restaurantFragment"
-        android:name="emre.turhal.myapplicationtest.restaurants_list.RestaurantFragment"
+        android:name="emre.turhal.myapplicationtest.ui.restaurants_list.RestaurantFragment"
         android:label="@string/title_list"
         tools:layout="@layout/fragment_restaurant" />
 
     <fragment
         android:id="@+id/workmatesFragment"
-        android:name="emre.turhal.myapplicationtest.workmates_list.WorkmatesFragment"
+        android:name="emre.turhal.myapplicationtest.ui.workmates_list.WorkmatesFragment"
         android:label="@string/title_workmate"
         tools:layout="@layout/fragment_workmates" />
 

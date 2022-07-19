@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest;
+package emre.turhal.myapplicationtest.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 public class BaseFragment extends Fragment {
 
     @Override
-    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return getView();
     }

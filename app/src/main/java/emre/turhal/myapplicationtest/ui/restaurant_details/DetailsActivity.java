@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.restaurant_details;
+package emre.turhal.myapplicationtest.ui.restaurant_details;
 
 import static emre.turhal.myapplicationtest.utils.Constants.BASE_URL_PLACE_PHOTO;
 import static emre.turhal.myapplicationtest.utils.Constants.MAX_HEIGHT_LARGE;
@@ -34,11 +34,11 @@ import java.util.Objects;
 import emre.turhal.myapplicationtest.BuildConfig;
 import emre.turhal.myapplicationtest.R;
 import emre.turhal.myapplicationtest.databinding.ActivityDetailsBinding;
-import emre.turhal.myapplicationtest.manager.BookingManager;
-import emre.turhal.myapplicationtest.manager.UserManager;
+import emre.turhal.myapplicationtest.firebase.manager.BookingManager;
+import emre.turhal.myapplicationtest.firebase.manager.UserManager;
 import emre.turhal.myapplicationtest.models.Workmate;
 import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultDetails;
-import emre.turhal.myapplicationtest.retrofit.GooglePlaceDetailsCalls;
+import emre.turhal.myapplicationtest.retrofit.googleplace.GooglePlaceDetailsCalls;
 
 public class DetailsActivity extends AppCompatActivity implements GooglePlaceDetailsCalls.Callbacks, View.OnClickListener {
 
@@ -227,11 +227,9 @@ public class DetailsActivity extends AppCompatActivity implements GooglePlaceDet
 
     @Override
     public void onFailure() {
-
     }
 
     @Override
     public void onClick(View v) {
-
     }
 }

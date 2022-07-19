@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.repository;
+package emre.turhal.myapplicationtest.firebase.repository;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;

@@ -1,9 +1,8 @@
-package emre.turhal.myapplicationtest;
+package emre.turhal.myapplicationtest.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.view.View;
 
 import com.firebase.ui.auth.AuthUI;
@@ -13,8 +12,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Arrays;
 
+import emre.turhal.myapplicationtest.R;
 import emre.turhal.myapplicationtest.databinding.ActivityLoginBinding;
-import emre.turhal.myapplicationtest.manager.UserManager;
+import emre.turhal.myapplicationtest.firebase.manager.UserManager;
 
 
 public class LoginActivity extends Activity {

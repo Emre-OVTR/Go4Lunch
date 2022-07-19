@@ -15,7 +15,6 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -23,12 +22,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import emre.turhal.myapplicationtest.MainActivity;
+import emre.turhal.myapplicationtest.ui.MainActivity;
 import emre.turhal.myapplicationtest.R;
-import emre.turhal.myapplicationtest.manager.BookingManager;
-import emre.turhal.myapplicationtest.manager.UserManager;
+import emre.turhal.myapplicationtest.firebase.manager.BookingManager;
+import emre.turhal.myapplicationtest.firebase.manager.UserManager;
 import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultDetails;
-import emre.turhal.myapplicationtest.retrofit.GooglePlaceDetailsCalls;
+import emre.turhal.myapplicationtest.retrofit.googleplace.GooglePlaceDetailsCalls;
 
 public class AlarmReceiver extends BroadcastReceiver implements GooglePlaceDetailsCalls.Callbacks {
 

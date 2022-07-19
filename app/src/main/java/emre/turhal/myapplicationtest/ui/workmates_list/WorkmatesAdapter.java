@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.workmates_list;
+package emre.turhal.myapplicationtest.ui.workmates_list;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -10,7 +10,6 @@ import java.util.List;
 
 import emre.turhal.myapplicationtest.databinding.FragmentWorkmatesItemBinding;
 import emre.turhal.myapplicationtest.models.Workmate;
-import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultDetails;
 
 public class WorkmatesAdapter extends RecyclerView.Adapter<WorkmatesViewHolder> {
 

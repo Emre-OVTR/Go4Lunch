@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.restaurants_list;
+package emre.turhal.myapplicationtest.ui.restaurants_list;
 
 import static emre.turhal.myapplicationtest.utils.Constants.BASE_URL_PLACE_PHOTO;
 import static emre.turhal.myapplicationtest.utils.Constants.CLOSED;

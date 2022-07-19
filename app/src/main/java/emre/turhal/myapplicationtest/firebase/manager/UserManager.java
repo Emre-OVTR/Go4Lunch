@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.manager;
+package emre.turhal.myapplicationtest.firebase.manager;
 
 import android.content.Context;
 
@@ -7,7 +7,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 
-import emre.turhal.myapplicationtest.repository.UserRepository;
+import emre.turhal.myapplicationtest.firebase.repository.UserRepository;
 
 public class UserManager {
 

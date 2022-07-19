@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest;
+package emre.turhal.myapplicationtest.ui;
 
 import static emre.turhal.myapplicationtest.utils.Constants.PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION;
 import static emre.turhal.myapplicationtest.utils.GetTodayDate.getTodayDate;
@@ -43,14 +43,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import emre.turhal.myapplicationtest.manager.BookingManager;
-import emre.turhal.myapplicationtest.manager.UserManager;
+import emre.turhal.myapplicationtest.R;
+import emre.turhal.myapplicationtest.firebase.manager.BookingManager;
+import emre.turhal.myapplicationtest.firebase.manager.UserManager;
 import emre.turhal.myapplicationtest.models.autocomplete_gson.AutocompleteResult;
 import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultDetails;
 import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultSearch;
-import emre.turhal.myapplicationtest.restaurant_details.DetailsActivity;
-import emre.turhal.myapplicationtest.retrofit.GooglePlaceDetailsCalls;
-import emre.turhal.myapplicationtest.retrofit.GooglePlacesCalls;
+import emre.turhal.myapplicationtest.ui.restaurant_details.DetailsActivity;
+import emre.turhal.myapplicationtest.retrofit.googleplace.GooglePlaceDetailsCalls;
+import emre.turhal.myapplicationtest.retrofit.googleplace.GooglePlacesCalls;
 import emre.turhal.myapplicationtest.retrofit.google_autocomplete.GoogleAutocompleteCalls;
 import emre.turhal.myapplicationtest.utils.DistanceTo;
 

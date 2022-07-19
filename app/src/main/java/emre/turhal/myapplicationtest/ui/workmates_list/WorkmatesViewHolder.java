@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.workmates_list;
+package emre.turhal.myapplicationtest.ui.workmates_list;
 
 import static emre.turhal.myapplicationtest.utils.GetTodayDate.getTodayDate;
 
@@ -13,7 +13,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import emre.turhal.myapplicationtest.R;
 import emre.turhal.myapplicationtest.databinding.FragmentWorkmatesItemBinding;
-import emre.turhal.myapplicationtest.manager.BookingManager;
+import emre.turhal.myapplicationtest.firebase.manager.BookingManager;
 import emre.turhal.myapplicationtest.models.Workmate;
 import emre.turhal.myapplicationtest.utils.ChangeColorWorkmate;
 

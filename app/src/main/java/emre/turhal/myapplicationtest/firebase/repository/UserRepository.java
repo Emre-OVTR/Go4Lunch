@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.repository;
+package emre.turhal.myapplicationtest.firebase.repository;
 
 import android.content.Context;
 

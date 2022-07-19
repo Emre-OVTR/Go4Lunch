@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.retrofit;
+package emre.turhal.myapplicationtest.retrofit.googleplace;
 
 import static emre.turhal.myapplicationtest.utils.Constants.BASE_URL_GOOGLE_API;
 

@@ -18,6 +18,8 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
+import emre.turhal.myapplicationtest.ui.MainActivity;
+
 /**
  * Instrumented test, which will execute on an Android device.
  *

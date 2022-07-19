@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest;
+package emre.turhal.myapplicationtest.ui;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Objects;
 
 import emre.turhal.myapplicationtest.databinding.ActivitySettingsBinding;
-import emre.turhal.myapplicationtest.manager.UserManager;
+import emre.turhal.myapplicationtest.firebase.manager.UserManager;
 import emre.turhal.myapplicationtest.utils.NotificationManager;
 
 public class SettingsActivity extends AppCompatActivity {

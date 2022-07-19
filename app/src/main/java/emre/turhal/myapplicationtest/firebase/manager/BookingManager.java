@@ -1,10 +1,10 @@
-package emre.turhal.myapplicationtest.manager;
+package emre.turhal.myapplicationtest.firebase.manager;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import emre.turhal.myapplicationtest.repository.BookingRepository;
+import emre.turhal.myapplicationtest.firebase.repository.BookingRepository;
 
 public class BookingManager {
 

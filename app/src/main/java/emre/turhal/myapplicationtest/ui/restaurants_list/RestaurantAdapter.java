@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.restaurants_list;
+package emre.turhal.myapplicationtest.ui.restaurants_list;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;

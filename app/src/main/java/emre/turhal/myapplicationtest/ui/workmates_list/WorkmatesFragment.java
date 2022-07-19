@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.workmates_list;
+package emre.turhal.myapplicationtest.ui.workmates_list;
 
 import static com.firebase.ui.auth.ui.email.EmailLinkFragment.TAG;
 
@@ -30,13 +30,12 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
-import emre.turhal.myapplicationtest.BaseFragment;
+import emre.turhal.myapplicationtest.ui.BaseFragment;
 import emre.turhal.myapplicationtest.R;
-import emre.turhal.myapplicationtest.manager.BookingManager;
-import emre.turhal.myapplicationtest.manager.UserManager;
+import emre.turhal.myapplicationtest.firebase.manager.BookingManager;
+import emre.turhal.myapplicationtest.firebase.manager.UserManager;
 import emre.turhal.myapplicationtest.models.Workmate;
-import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultDetails;
-import emre.turhal.myapplicationtest.restaurant_details.DetailsActivity;
+import emre.turhal.myapplicationtest.ui.restaurant_details.DetailsActivity;
 import emre.turhal.myapplicationtest.utils.ItemClickSupport;
 
 
@@ -48,12 +47,9 @@ public class WorkmatesFragment extends BaseFragment {
     private BookingManager mBookingManager = BookingManager.getInstance();
 
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
 

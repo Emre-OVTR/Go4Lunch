@@ -1,4 +1,4 @@
-package emre.turhal.myapplicationtest.retrofit;
+package emre.turhal.myapplicationtest.retrofit.googleplace;
 
 import androidx.annotation.Nullable;
 
@@ -9,6 +9,7 @@ import java.lang.ref.WeakReference;
 import emre.turhal.myapplicationtest.BuildConfig;
 import emre.turhal.myapplicationtest.models.googleplaces_gson.PlaceDetails;
 import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultDetails;
+import emre.turhal.myapplicationtest.retrofit.googleplace.GooglePlaceDetailsService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

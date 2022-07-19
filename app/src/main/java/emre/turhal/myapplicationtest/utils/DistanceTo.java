@@ -1,7 +1,7 @@
 package emre.turhal.myapplicationtest.utils;
 
 import java.util.Objects;
-import emre.turhal.myapplicationtest.MainActivity;
+import emre.turhal.myapplicationtest.ui.MainActivity;
 import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultDetails;
 
 public class DistanceTo {

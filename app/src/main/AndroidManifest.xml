@@ -16,10 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SettingsActivity"
+            android:name=".ui.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".restaurant_details.DetailsActivity"
+            android:name=".ui.restaurant_details.DetailsActivity"
             android:exported="false" />
 
         <meta-data
@@ -27,17 +27,8 @@
             android:value="AIzaSyCVhZiXlooLrQpsEFlJ62T088ClLBUFRIQ" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <receiver android:name=".utils.AlarmReceiver"
             android:exported="true">
             <intent-filter>
