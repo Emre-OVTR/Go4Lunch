@@ -1,5 +1,7 @@
 package emre.turhal.myapplicationtest.retrofit.google_autocomplete;
 
+import static emre.turhal.myapplicationtest.utils.Constants.BASE_URL_GOOGLE_API;
+
 import emre.turhal.myapplicationtest.models.autocomplete_gson.AutocompleteResult;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -10,7 +12,7 @@ import retrofit2.http.Query;
 public interface GoogleAutocompleteService {
 
     Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://maps.googleapis.com")
+            .baseUrl(BASE_URL_GOOGLE_API)
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
