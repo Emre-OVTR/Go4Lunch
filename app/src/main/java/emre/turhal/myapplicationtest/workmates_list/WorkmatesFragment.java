@@ -127,7 +127,7 @@ public class WorkmatesFragment extends BaseFragment {
     private void checkBooking(Workmate workmate){
         mBookingManager.getBooking(workmate.getUid(), getTodayDate()).addOnCompleteListener(bookingTask -> {
             if (bookingTask.isSuccessful()){
-                if (!(Objects.requireNonNull(bookingTask.getResult().isEmpty()))) {
+                if (!(bookingTask.getResult().isEmpty())) {
                     for (QueryDocumentSnapshot booking : bookingTask.getResult()) {
                         startRestaurantDetails(Objects.requireNonNull(booking.getData().get("restaurantId")).toString());
                     }

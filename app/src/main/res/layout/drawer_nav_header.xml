@@ -9,7 +9,7 @@
         android:id="@+id/background_header_drawer"
         android:layout_width="match_parent"
         android:layout_height="@dimen/drawer_nav_header_height"
-        android:contentDescription="lunch"
+        android:contentDescription="@string/lunch"
         android:scaleX="1.2"
         tools:ignore="MissingConstraints" />
 
@@ -31,7 +31,8 @@
         android:layout_height="55dp"
         android:layout_margin="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:contentDescription="@string/restaurant_image" />
 
     <TextView
         android:id="@+id/nameUser"

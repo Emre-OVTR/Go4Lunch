@@ -91,7 +91,6 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void createNotificationManager() {
         mNotificationManager = new NotificationManager(getBaseContext());
-
     }
 
     @Nullable

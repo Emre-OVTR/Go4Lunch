@@ -50,19 +50,13 @@ public final class UserRepository {
 
             Task<DocumentSnapshot> userData = getUserData();
 
-            userData.addOnSuccessListener(documentSnapshot -> {
-                this.getWorkmateCollection().document(uid).set(userToCreate);
-            });
+            userData.addOnSuccessListener(documentSnapshot -> getWorkmateCollection().document(uid).set(userToCreate));
         }
     }
 
     public Task<DocumentSnapshot> getUserData(){
         String uid = getCurrentUser().getUid();
-        if (uid != null){
-            return this.getWorkmateCollection().document(uid).get();
-        } else {
-            return null;
-        }
+        return getWorkmateCollection().document(uid).get();
     }
 
     public Task<DocumentSnapshot> getWorkmate(String uid){

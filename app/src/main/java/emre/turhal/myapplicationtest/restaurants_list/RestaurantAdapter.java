@@ -17,7 +17,6 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantViewHolder
     private final String mLocation;
 
     public RestaurantAdapter(List<ResultDetails> items, String location){
-
         mResultDetails = items;
         mLocation = location;
     }
@@ -32,10 +31,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull RestaurantViewHolder holder, int position) {
-
-        holder.updateWithData(this.mResultDetails.get(position), this.mLocation);
-
-
+        holder.updateWithData(this.mResultDetails.get(position));
     }
 
     @Override

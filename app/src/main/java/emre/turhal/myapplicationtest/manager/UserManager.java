@@ -56,7 +56,4 @@ public class UserManager {
     public static void updateUserSettings(String userId, boolean notification) {
         userRepository.updateUserSettings(userId, notification);
     }
-
-
-
 }

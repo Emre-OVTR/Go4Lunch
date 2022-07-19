@@ -1,5 +1,12 @@
 package emre.turhal.myapplicationtest.restaurants_list;
 
+import static emre.turhal.myapplicationtest.utils.Constants.BASE_URL_PLACE_PHOTO;
+import static emre.turhal.myapplicationtest.utils.Constants.CLOSED;
+import static emre.turhal.myapplicationtest.utils.Constants.CLOSING_SOON;
+import static emre.turhal.myapplicationtest.utils.Constants.MAX_HEIGHT;
+import static emre.turhal.myapplicationtest.utils.Constants.MAX_WIDTH;
+import static emre.turhal.myapplicationtest.utils.Constants.OPEN;
+import static emre.turhal.myapplicationtest.utils.Constants.OPENING_HOURS_NOT_KNOW;
 import static emre.turhal.myapplicationtest.utils.FormatTime.formatTime;
 
 import android.graphics.Typeface;
@@ -13,6 +20,7 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.Calendar;
 
+import emre.turhal.myapplicationtest.BuildConfig;
 import emre.turhal.myapplicationtest.R;
 import emre.turhal.myapplicationtest.databinding.FragmentRestaurantItemBinding;
 import emre.turhal.myapplicationtest.models.googleplaces_gson.ResultDetails;
@@ -21,20 +29,14 @@ import emre.turhal.myapplicationtest.utils.DisplayRating;
 public class RestaurantViewHolder extends RecyclerView.ViewHolder {
 
     FragmentRestaurantItemBinding mBinding;
-    public static final String OPEN = "OPEN";
-    public static final String CLOSED = "CLOSED";
-    public static final String CLOSING_SOON = "CLOSING_SOON";
-    public static final String OPENING_HOURS_NOT_KNOW = "OPENING_HOURS_NOT_KNOW";
-    public static final String BASE_URL_PLACE_PHOTO = "https://maps.googleapis.com/maps/api/place/photo";
-    public static final int MAX_WIDTH = 200;
-    public static final int MAX_HEIGHT = 200;
+
 
     public RestaurantViewHolder(@NonNull FragmentRestaurantItemBinding itemView) {
         super(itemView.getRoot());
         mBinding = itemView;
     }
 
-    public void updateWithData(ResultDetails resultDetails, String mLocation) {
+    public void updateWithData(ResultDetails resultDetails) {
 
         RequestManager glide = Glide.with(itemView);
 
@@ -47,7 +49,7 @@ public class RestaurantViewHolder extends RecyclerView.ViewHolder {
         if (!(resultDetails.getPhotos() == null)) {
             if (!(resultDetails.getPhotos().isEmpty())) {
                 glide.load(BASE_URL_PLACE_PHOTO + "?maxwidth=" + MAX_WIDTH + "&maxheight=" + MAX_HEIGHT + "&photoreference=" + resultDetails.getPhotos().get(0)
-                                .getPhotoReference() + "&key=" + "AIzaSyCVhZiXlooLrQpsEFlJ62T088ClLBUFRIQ")
+                                .getPhotoReference() + "&key=" + BuildConfig.api_key)
                         .apply(RequestOptions.centerCropTransform()).into(mBinding.itemAvatarRestaurant);
 
                 }
@@ -64,9 +66,6 @@ public class RestaurantViewHolder extends RecyclerView.ViewHolder {
         } else {
             displayOpeningHour(OPENING_HOURS_NOT_KNOW, null);
         }
-
-
-
         }
 
 
@@ -124,6 +123,4 @@ public class RestaurantViewHolder extends RecyclerView.ViewHolder {
                 break;
         }
     }
-
-
     }

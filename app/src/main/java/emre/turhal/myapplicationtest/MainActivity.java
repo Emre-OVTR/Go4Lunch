@@ -1,5 +1,6 @@
 package emre.turhal.myapplicationtest;
 
+import static emre.turhal.myapplicationtest.utils.Constants.PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION;
 import static emre.turhal.myapplicationtest.utils.GetTodayDate.getTodayDate;
 import static emre.turhal.myapplicationtest.utils.ShowToastSnack.showToast;
 
@@ -56,22 +57,19 @@ import emre.turhal.myapplicationtest.utils.DistanceTo;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleAutocompleteCalls.Callbacks, GooglePlacesCalls.Callbacks, GooglePlaceDetailsCalls.Callbacks {
 
 
-    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
-    private UserManager mUserManager = UserManager.getInstance();
-
     private ImageView imageProfileView;
     private TextView emailUser;
     private TextView nameUser;
     private ImageView backgroundView;
-
     private final List<ResultDetails> mResultDetailsList = new ArrayList<>();
     public SharedViewModel mShareViewModel;
-    // LIVEDATA
     public MutableLiveData<List<ResultDetails>> mLiveData = new MutableLiveData<>();
     private int resultSize;
+    private UserManager mUserManager = UserManager.getInstance();
     private BookingManager mBookingManager = BookingManager.getInstance();
+
 
 
     @Override
@@ -104,9 +102,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             });
         }
-
         this.updateUI();
-
     }
 
     private void configureDrawerLayout() {
@@ -132,8 +128,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nameUser = headerLayout.findViewById(R.id.nameUser);
         backgroundView = headerLayout.findViewById(R.id.background_header_drawer);
         navigationView.setNavigationItemSelectedListener(this);
-
-
     }
 
 
@@ -187,7 +181,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .into(imageProfileView);
         nameUser.setText(mUserManager.getCurrentUser().getDisplayName());
         emailUser.setText(mUserManager.getCurrentUser().getEmail());
-
     }
 
     private void configureBottomNavigationView() {
@@ -195,7 +188,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
-
     }
 
     @Override
@@ -207,7 +199,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             GooglePlaceDetailsCalls.fetchPlaceDetails(this, resultSearchList.get(i).getPlaceId());
         }
         resultSize = resultSearchList.size();
-
     }
 
     @Override
@@ -232,7 +223,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         assert autoCompleteResult != null;
         resultSize = autoCompleteResult.getPredictions().size();
         AutoCompleteToDetails(autoCompleteResult);
-
     }
 
     private void AutoCompleteToDetails(AutocompleteResult autoCompleteResult) {
@@ -248,7 +238,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onFailure() {
-
     }
 
     public void searchByCurrentPosition() {

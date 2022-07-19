@@ -3,8 +3,6 @@
 
     <string name="facebook_application_id">483008259977080</string>
     <string name="fb_login_protocol_scheme">fb483008259977080</string>
-    <string name="API_KEY">AIzaSyCVhZiXlooLrQpsEFlJ62T088ClLBUFRIQ </string>
-
 
     <string name="logo" translatable="false">logo</string>
     <string name="activity_main_menu_search">Search</string>
@@ -25,7 +23,7 @@
     <string name="simple_app_name">Go4Lunch</string>
     <string name="Avatar">avatar</string>
     <string name="searching">searching</string>
-    <string name="Titre_Toolbar_workmates">workmates</string>
+    <string name="Titre_Toolbar_workmates"> Available Workmates</string>
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="name_restaurant">name_restaurant</string>
@@ -68,5 +66,8 @@
     <string name="notification_no_workmates">None.</string>
 
     <string name="settings_notification">Notifications</string>
+    <string name="Title_Hungry">I\'m Hungry!</string>
+    <string name="lunch">lunch with workmates</string>
+    <string name="restaurant_image">photo</string>
 
 </resources>

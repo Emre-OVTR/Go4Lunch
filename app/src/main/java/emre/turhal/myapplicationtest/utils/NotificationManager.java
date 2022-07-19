@@ -1,5 +1,7 @@
 package emre.turhal.myapplicationtest.utils;
 
+import static emre.turhal.myapplicationtest.utils.Constants.ALARM_TYPE_RTC;
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -12,7 +14,6 @@ public class NotificationManager {
     private Context mContext;
     private AlarmManager mAlarmManager;
     private PendingIntent mPendingIntent;
-    public static final int ALARM_TYPE_RTC = 100;
 
     public NotificationManager(Context context) {
         mContext = context;

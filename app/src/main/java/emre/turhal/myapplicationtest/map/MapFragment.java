@@ -2,6 +2,7 @@ package emre.turhal.myapplicationtest.map;
 
 import static android.content.ContentValues.TAG;
 
+import static emre.turhal.myapplicationtest.utils.Constants.PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION;
 import static emre.turhal.myapplicationtest.utils.ShowToastSnack.showToast;
 import static emre.turhal.myapplicationtest.utils.UpdateMarkers.updateMarkers;
 
@@ -50,21 +51,16 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
     private FragmentMapBinding mBinding;
     private GoogleMap googleMap;
     private boolean locationPermissionGranted;
-    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     private Location lastKnownLocation;
     private FusedLocationProviderClient fusedLocationProviderClient;
     private LatLng defaultLocation = new LatLng(-33.8523341, 151.2106085);
-
     private MainActivity mMainActivity;
     private String mLocation;
-
-
 
 
     public MapFragment() {
 
     }
-
 
 
     @Override
@@ -73,11 +69,6 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
 
         mBinding = FragmentMapBinding.inflate(getLayoutInflater());
         mMainActivity = (MainActivity) requireActivity();
-
-
-
-
-
     }
 
     @Override
@@ -91,11 +82,9 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
             getLocationPermission();
             getDeviceLocation();
         });
-
+        requireActivity().setTitle(getString(R.string.Title_Hungry));
         setHasOptionsMenu(true);
         return view;
-
-
     }
 
 
@@ -162,10 +151,7 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
                 Task<Location> locationResult = fusedLocationProviderClient.getLastLocation();
                 locationResult.addOnCompleteListener(requireActivity(), task -> {
                     if (task.isSuccessful()) {
-
                         if (lastKnownLocation != null) {
-
-
                             lastKnownLocation = task.getResult();
 
                             mLocation = lastKnownLocation.getLatitude() + "," + lastKnownLocation.getLongitude();
@@ -259,8 +245,5 @@ public class MapFragment extends BaseFragment  implements OnMapReadyCallback {
             }
         });
     }
-
-
-
 
 }

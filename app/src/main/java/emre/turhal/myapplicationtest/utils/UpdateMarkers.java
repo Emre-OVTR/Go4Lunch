@@ -7,7 +7,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.Objects;
@@ -20,10 +19,6 @@ import emre.turhal.myapplicationtest.manager.BookingManager;
 public class UpdateMarkers {
 
     private static BookingManager mBookingManager = BookingManager.getInstance();
-
-    /**
-     * USE OF LIVEDATA
-     */
 
     public static void updateMarkers(GoogleMap map, MainActivity mMainActivity) {
         if (mMainActivity.mLiveData.getValue() != null) {
@@ -41,6 +36,7 @@ public class UpdateMarkers {
                                 markerOptions.position(new LatLng(lat, lng));
                                 markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_green));
                                 Marker marker = map.addMarker(markerOptions);
+                                assert marker != null;
                                 marker.setTag(mMainActivity.mLiveData.getValue().get(finalI).getPlaceId());
                                 marker.showInfoWindow();
                             }
@@ -58,14 +54,13 @@ public class UpdateMarkers {
                     markerOptions.position(new LatLng(lat, lng));
                     markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.marker));
                     Marker marker = map.addMarker(markerOptions);
+                    assert marker != null;
                     marker.setTag(mMainActivity.mLiveData.getValue().get(i).getPlaceId());
                     marker.showInfoWindow();
 
                 }
-            } else {
-             //   showToast(mMainActivity.getApplicationContext(), mMainActivity.getResources().getString(R.string.no_restaurant), 1);
             }
-           // Log.e(Constants.TAG, "number of markers : " + mMainActivity.mLiveData.getValue().size());
+
         }
     }
 }

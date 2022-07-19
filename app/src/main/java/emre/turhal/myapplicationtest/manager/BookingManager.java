@@ -1,7 +1,6 @@
 package emre.turhal.myapplicationtest.manager;
 
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -44,10 +43,4 @@ public class BookingManager {
     public void deleteBooking(String bookingId){
           bookingRepository.deleteBooking(bookingId);
     }
-
-    public static CollectionReference getBookingCollection(){
-        return bookingRepository.getBookingCollection();
-    }
-
-
 }

@@ -1,5 +1,7 @@
 package emre.turhal.myapplicationtest.retrofit;
 
+import static emre.turhal.myapplicationtest.utils.Constants.BASE_URL_GOOGLE_API;
+
 import emre.turhal.myapplicationtest.models.googleplaces_gson.PlaceDetails;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -9,8 +11,6 @@ import retrofit2.http.Query;
 
 
 public interface GooglePlaceDetailsService {
-
-    String BASE_URL_GOOGLE_API = "https://maps.googleapis.com";
 
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL_GOOGLE_API)

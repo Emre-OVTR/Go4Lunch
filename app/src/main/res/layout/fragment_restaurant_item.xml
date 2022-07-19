@@ -2,10 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginBottom="@dimen/margin_to_parent">
-
-    <!-- FIRST LINE -->
 
     <TextView
         android:id="@+id/name_restaurant"
@@ -31,8 +28,6 @@
         android:textColor="@color/browser_actions_title_color"
         app:layout_constraintEnd_toStartOf="@id/item_avatar_restaurant"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- SECOND LINE -->
 
     <ImageView
         android:id="@+id/item_avatar_restaurant"
@@ -67,7 +62,8 @@
         app:layout_constraintBottom_toBottomOf="@id/item_avatar_restaurant"
         app:layout_constraintEnd_toStartOf="@id/workmate_on_restaurant"
         app:layout_constraintTop_toTopOf="@id/item_avatar_restaurant"
-        app:srcCompat="@drawable/ic_perm_identity_black_24dp" />
+        app:srcCompat="@drawable/ic_perm_identity_black_24dp"
+        android:contentDescription="workmate_icon" />
 
     <TextView
         android:id="@+id/workmate_on_restaurant"
@@ -78,8 +74,6 @@
         app:layout_constraintEnd_toStartOf="@id/item_avatar_restaurant"
         app:layout_constraintTop_toTopOf="@id/item_avatar_restaurant" />
 
-
-    <!-- THIRD LINE -->
 
     <TextView
         android:id="@+id/Open_hour"

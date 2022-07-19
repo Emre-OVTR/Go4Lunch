@@ -39,8 +39,7 @@ public class WorkmatesAdapter extends RecyclerView.Adapter<WorkmatesViewHolder> 
 
     @Override
     public int getItemCount() {
-        int itemCount = mWorkmatesList.size();
-        return itemCount;
+        return mWorkmatesList.size();
     }
 
     public Workmate getWorkmates(int position) {

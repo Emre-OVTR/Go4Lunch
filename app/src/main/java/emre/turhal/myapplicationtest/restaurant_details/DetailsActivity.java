@@ -1,5 +1,8 @@
 package emre.turhal.myapplicationtest.restaurant_details;
 
+import static emre.turhal.myapplicationtest.utils.Constants.BASE_URL_PLACE_PHOTO;
+import static emre.turhal.myapplicationtest.utils.Constants.MAX_HEIGHT_LARGE;
+import static emre.turhal.myapplicationtest.utils.Constants.MAX_WIDTH_LARGE;
 import static emre.turhal.myapplicationtest.utils.DisplayRating.displayRating;
 import static emre.turhal.myapplicationtest.utils.GetTodayDate.getTodayDate;
 import static emre.turhal.myapplicationtest.utils.ShowToastSnack.showToast;
@@ -28,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import emre.turhal.myapplicationtest.BuildConfig;
 import emre.turhal.myapplicationtest.R;
 import emre.turhal.myapplicationtest.databinding.ActivityDetailsBinding;
 import emre.turhal.myapplicationtest.manager.BookingManager;
@@ -42,11 +46,8 @@ public class DetailsActivity extends AppCompatActivity implements GooglePlaceDet
     private final List<Workmate> mWorkmates = new ArrayList<>();
     private ResultDetails mResultDetails;
     private Restaurant_Details_RecyclerViewAdapter mAdapter;
-    public static final int MAX_WIDTH_LARGE = 400;
-    public static final int MAX_HEIGHT_LARGE = 400;
-    public static final String BASE_URL_PLACE_PHOTO = "https://maps.googleapis.com/maps/api/place/photo";
-    private BookingManager mBookingManager = BookingManager.getInstance();
-    private UserManager mUserManager = UserManager.getInstance();
+    private final BookingManager mBookingManager = BookingManager.getInstance();
+    private final UserManager mUserManager = UserManager.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +79,7 @@ public class DetailsActivity extends AppCompatActivity implements GooglePlaceDet
                     for (QueryDocumentSnapshot restaurant : restaurantTask.getResult()) {
                         mUserManager.getWorkmate(Objects.requireNonNull(restaurant.getData().get("workmateUid")).toString()).addOnCompleteListener(workmateTask -> {
                             if (workmateTask.isSuccessful()) {
-                                String name = Objects.requireNonNull(workmateTask.getResult().getData()).get("name").toString();
+                                String name = Objects.requireNonNull(Objects.requireNonNull(workmateTask.getResult().getData()).get("name")).toString();
                                 String uid = Objects.requireNonNull(workmateTask.getResult().getData().get("uid")).toString();
                                 String urlPicture = Objects.requireNonNull(workmateTask.getResult().getData().get("urlPicture")).toString();
                                 Workmate workmateToAdd = new Workmate(urlPicture, name, uid);
@@ -126,7 +127,7 @@ public class DetailsActivity extends AppCompatActivity implements GooglePlaceDet
 
         if (resultDetails.getPhotos() != null) {
             Glide.with(this).load(BASE_URL_PLACE_PHOTO + "?maxwidth=" + MAX_WIDTH_LARGE + "&maxheight=" + MAX_HEIGHT_LARGE + "&photoreference=" + resultDetails.getPhotos().get(0)
-                    .getPhotoReference() + "&key=" + "AIzaSyCVhZiXlooLrQpsEFlJ62T088ClLBUFRIQ").into(mBinding.imageView);
+                    .getPhotoReference() + "&key=" + BuildConfig.api_key).into(mBinding.imageView);
 
 
         } else {

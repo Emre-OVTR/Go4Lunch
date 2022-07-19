@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,13 +42,9 @@ public class RestaurantFragment extends BaseFragment {
     private RestaurantAdapter mRecyclerViewAdapter;
 
 
-
-
     public RestaurantFragment(){
 
     }
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,18 +57,18 @@ public class RestaurantFragment extends BaseFragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = mBinding.getRoot();
+        RecyclerView view = mBinding.getRoot();
         Context context = view.getContext();
 
         mMainActivity.mLiveData.observe(getViewLifecycleOwner(), resultDetails -> configureRecyclerView());
 
-        mRecyclerView = (RecyclerView) view;
+        mRecyclerView = view;
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
-
+        requireActivity().setTitle(getString(R.string.Title_Hungry));
         setHasOptionsMenu(true);
         configureOnClickRecyclerView();
         return view;

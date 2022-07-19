@@ -30,12 +30,8 @@ public class LoginActivity extends Activity {
         mBinding = ActivityLoginBinding.inflate(getLayoutInflater());
         View view = mBinding.getRoot();
         setContentView(view);
-
         this.startSignInActivity();
-
-
     }
-
 
     private void startSignInActivity(){
         startActivityForResult(
@@ -60,8 +56,6 @@ public class LoginActivity extends Activity {
 
     private void showSnackBar(String message){
         Snackbar.make(mBinding.logActivityCoordinatorLayout, message, Snackbar.LENGTH_SHORT).show();
-
-
     }
 
     private void handleResponseAfterSignIn(int requestCode, int resultCode, Intent data){
@@ -89,8 +83,4 @@ public class LoginActivity extends Activity {
             }
         }
     }
-
-
-
-
 }
