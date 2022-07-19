@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name" translatable="false">My Application</string>
 
-    <string name="facebook_application_id">483008259977080</string>
-    <string name="fb_login_protocol_scheme">fb483008259977080</string>
+    <string name="facebook_application_id" translatable="false">483008259977080</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb483008259977080</string>
 
     <string name="logo" translatable="false">logo</string>
     <string name="activity_main_menu_search">Search</string>
@@ -20,17 +20,17 @@
 
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-    <string name="simple_app_name">Go4Lunch</string>
-    <string name="Avatar">avatar</string>
-    <string name="searching">searching</string>
+    <string name="simple_app_name" translatable="false">Go4Lunch</string>
+    <string name="Avatar" translatable="false">avatar</string>
+    <string name="searching" translatable="false">searching</string>
     <string name="Titre_Toolbar_workmates"> Available Workmates</string>
 
 
-    <string name="name_restaurant">name_restaurant</string>
-    <string name="distance">distance</string>
+    <string name="name_restaurant" translatable="false">name_restaurant</string>
+    <string name="distance" translatable="false">distance</string>
     <string name="photo_restaurant_item">photo_restaurant_item</string>
     <string name="address">restaurant_adress</string>
-    <string name="opening_time">restaurant_opening</string>
+    <string name="opening_time" translatable="false">restaurant_opening</string>
     <string name="unit_distance" translatable="false">%1$sm</string>
 
     <string name="restaurant_closed">Closed</string>
@@ -65,9 +65,9 @@
     <string name="notif2">Workmates participating :</string>
     <string name="notification_no_workmates">None.</string>
 
-    <string name="settings_notification">Notifications</string>
+    <string name="settings_notification" translatable="false">Notifications</string>
     <string name="Title_Hungry">I\'m Hungry!</string>
     <string name="lunch">lunch with workmates</string>
-    <string name="restaurant_image">photo</string>
+    <string name="restaurant_image" translatable="false">photo</string>
 
 </resources>

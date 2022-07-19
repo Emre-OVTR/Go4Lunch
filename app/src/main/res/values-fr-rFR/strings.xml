@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="activity_main_menu_search">Recherche</string>
+    <string name="menu_lunch">Votre Restaurant</string>
+    <string name="menu_settings">Réglages</string>
+    <string name="menu_logout">Déconnexion</string>
+    <string name="call">Appeler</string>
+    <string name="website">Site Web</string>
+    <string name="title_map">Carte</string>
+    <string name="title_list">Liste</string>
+    <string name="title_workmate">Collègues</string>
+    <string name="Titre_Toolbar_workmates">Collègues disponibles</string>
+    <string name="photo_restaurant_item">miniature du restaurant</string>
+    <string name="address">adresse</string>
+    <string name="restaurant_closed">Fermé</string>
+    <string name="restaurant_opening_not_know">Horraires d\'ouvertures inconnues</string>
+    <string name="closing_soon">Ferme bientot (%1$s)</string>
+    <string name="open_until">Ouvert jusqu\'a (%1Ss)</string>
+    <string name="Image_restaurant">Image du restaurant</string>
+    <string name="error_unknown_error">Une erreur inconnue est survenue</string>
+    <string name="cancel_booking">Vous avez annulé cette réservation</string>
+    <string name="modify_booking">Vous avez programmé une nouvelle réservation</string>
+    <string name="new_booking">Vous avez choisit ce Restaurant</string>
+    <string name="restaurant_error">Impossible de récupérer les informations</string>
+    <string name="logo_user">logo de l\'utilisateur</string>
+    <string name="restaurant_recyclerview">%1$s a rejoint</string>
+    <string name="eating_at">%1$s mange au %2$s</string>
+    <string name="no_restaurant_booked">Pas de repas aujourd\'hui ?</string>
+    <string name="hasnt_decided">%1$s n\' a pas encore décidé</string>
+    <string name="search_hint">Recherche</string>
+    <string name="search_too_short">3 caractères minimum</string>
+    <string name="notif1">Votre déjeuner aujourd\'hui</string>
+    <string name="notif2">Collègues qui participent :</string>
+    <string name="notification_no_workmates">Aucuns</string>
+    <string name="Title_Hungry">J\'ai faim!</string>
+    <string name="lunch">déjeuner avec les collègues</string>
+</resources>
